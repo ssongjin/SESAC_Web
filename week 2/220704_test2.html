@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>방명록</title>
+    <style>
+        table { width: 500px; height: 100px; text-align: center;}
+    </style>
+    <script>
+        function write() {
+            var Number = count("number");
+            var name = document.getElementById("name").value;
+            var message = document.getElementById("message").value;
+            var date = new Date("date");
+        }
+
+ 
+
+    </script>
+
+</head>
+
+<body>
+    <p>방명록입니다.</p>
+    작성자 <input type="text" id="name"><br>
+    내용 <input type="text" id="message"><br><br>
+    <button type="button" onclick="write();">작성</button><br><br>
+    <table border="1" cellspacing="1" cellpadding="1">
+        <tr>
+            <td><strong>번호</strong></td>
+            <td><strong>작성자</strong></td>
+            <td><strong>내용</strong></td>
+            <td><strong>작성일</strong></td>
+        </tr>
+        <tr>
+            <td id="count"></td>
+            <td id="name"></td>
+            <td id="message"></td>
+            <td id="date"></td>
+        </tr>
+        <tr>
+            <td id="count"><input</td>
+            <td id="name"></td>
+            <td id="message"></td>
+            <td id="date"></td>
+        </tr>
+
+
+</body>
+
+</html>
