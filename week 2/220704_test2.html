@@ -7,7 +7,7 @@
         table { width: 500px; height: 100px; text-align: center;}
     </style>
     <script>
-        function write() {
+        function writeNote() {
             var Number = count("number");
             var name = document.getElementById("name").value;
             var message = document.getElementById("message").value;
@@ -24,13 +24,13 @@
     <p>방명록입니다.</p>
     작성자 <input type="text" id="name"><br>
     내용 <input type="text" id="message"><br><br>
-    <button type="button" onclick="write();">작성</button><br><br>
+    <button type="button" onclick="writeNote();">작성</button><br><br>
     <table border="1" cellspacing="1" cellpadding="1">
         <tr>
-            <td><strong>번호</strong></td>
-            <td><strong>작성자</strong></td>
-            <td><strong>내용</strong></td>
-            <td><strong>작성일</strong></td>
+            <th>번호</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
         </tr>
         <tr>
             <td id="count"></td>
