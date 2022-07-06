@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../jquery-ui-1.13.1.custom/jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.13.1.custom/jquery-ui-1.13.1.custom/jquery-ui.js">
+
+    <style>
+        div {
+            width: 100;
+            height: 100;
+        }
+
+        div:hover {
+            cursor: pointer;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        function changeColors() {
+            if ($("div").hasClass("red")) $("div").switchClass("red","orange");
+            else if ($("div").hasClass("orange")) $("div").switchClass("orange","yellow");
+            else if ($("div").hasClass("yellow")) $("div").switchClass("yellow","red");
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="div" class="red" onclick="changeColors();"></div>
+
+</body>
+
+</html>
