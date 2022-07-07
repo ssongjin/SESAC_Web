@@ -4,18 +4,35 @@
     <meta charset="utf-8">
     <title>방명록</title>
     <style>
-        table { width: 500px; height: 100px; text-align: center;}
+        table {
+            width: 450px;
+            text-align: center;
+        }
     </style>
     <script>
+        var cnt = 1;
         function writeNote() {
-            var Number = count("number");
             var name = document.getElementById("name").value;
             var message = document.getElementById("message").value;
-            var date = new Date("date");
+            var table = document.getElementById("table");
+            var garo = document.createElement("tr");
+            var sero1 = document.createElement("td");
+            sero1.innerText = cnt;
+            cnt = cnt + 1;
+            var sero2 = document.createElement("td");
+            sero2.innerText = name;
+            var sero3 = document.createElement("td");
+            sero3.innerText = message;
+            var sero4 = document.createElement("td");
+            var date = new Date();
+            console.log(date);
+            sero4.innerText = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes();
+            garo.appendChild(sero1);
+            garo.appendChild(sero2);
+            garo.appendChild(sero3);
+            garo.appendChild(sero4);
+            table.appendChild(garo);
         }
-
- 
-
     </script>
 
 </head>
@@ -25,24 +42,12 @@
     작성자 <input type="text" id="name"><br>
     내용 <input type="text" id="message"><br><br>
     <button type="button" onclick="writeNote();">작성</button><br><br>
-    <table border="1" cellspacing="1" cellpadding="1">
+    <table id="table" border="1" cellspacing="1" cellpadding="1">
         <tr>
             <th>번호</th>
             <th>작성자</th>
             <th>내용</th>
             <th>작성일</th>
-        </tr>
-        <tr>
-            <td id="count"></td>
-            <td id="name"></td>
-            <td id="message"></td>
-            <td id="date"></td>
-        </tr>
-        <tr>
-            <td id="count"><input</td>
-            <td id="name"></td>
-            <td id="message"></td>
-            <td id="date"></td>
         </tr>
 
 
