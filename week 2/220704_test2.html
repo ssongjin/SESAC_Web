@@ -5,33 +5,18 @@
     <title>방명록</title>
     <style>
         table {
-            width: 450px;
+            width: 500px;
+            height: 100px;
             text-align: center;
         }
     </style>
     <script>
-        var cnt = 1;
         function writeNote() {
             var name = document.getElementById("name").value;
             var message = document.getElementById("message").value;
             var table = document.getElementById("table");
             var garo = document.createElement("tr");
-            var sero1 = document.createElement("td");
-            sero1.innerText = cnt;
-            cnt = cnt + 1;
-            var sero2 = document.createElement("td");
-            sero2.innerText = name;
-            var sero3 = document.createElement("td");
-            sero3.innerText = message;
-            var sero4 = document.createElement("td");
-            var date = new Date();
-            console.log(date);
-            sero4.innerText = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes();
-            garo.appendChild(sero1);
-            garo.appendChild(sero2);
-            garo.appendChild(sero3);
-            garo.appendChild(sero4);
-            table.appendChild(garo);
+            var kan1 = document.createElement("td");
         }
     </script>
 
@@ -42,13 +27,14 @@
     작성자 <input type="text" id="name"><br>
     내용 <input type="text" id="message"><br><br>
     <button type="button" onclick="writeNote();">작성</button><br><br>
-    <table id="table" border="1" cellspacing="1" cellpadding="1">
+    <table border="1" cellspacing="1" cellpadding="1">
         <tr>
             <th>번호</th>
             <th>작성자</th>
             <th>내용</th>
             <th>작성일</th>
         </tr>
+
 
 
 </body>
