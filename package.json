@@ -1,0 +1,22 @@
+{
+  "name": "testpackage",
+  "version": "1.0.0",
+  "description": "0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssongjin/SeSAC_web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssongjin/SeSAC_web/issues"
+  },
+  "homepage": "https://github.com/ssongjin/SeSAC_web#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
