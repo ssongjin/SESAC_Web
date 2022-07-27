@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>회원가입</title>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        function signUp() {
+            var form = document.getElementById("form_info");
+            console.log(form);
+
+            var result = form.checkValidity();
+            if (!result) {
+                form.reportValidity();
+
+                return false;
+            }
+            console.log(result);
+
+            console.log(form.userId.value);
+            console.log(form.name.value);
+            console.log(form.userPw.value);
+
+            axios({
+                method: "GET",
+                url: "http://localhost:8080/receive",
+                params: {
+                    userId: form.userId.value,
+                    name: form.name.value,
+                    userPw: form.userPw.value
+                }
+            }).then((a) => { return a.data; })
+                .then((d) => {
+                    alert(d.message);
+                });
+        }
+
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <form id="form_info" enctype="multipart/form-data">
+            아이디* <input type="text" name="userId" placeholder="ID" required><br><br>
+            이름* <input type="text" name="name" placeholder="이름" required><br><br>
+            비밀번호* <input type="password" name="userPw" required>
+        </form>
+        성별 <input type="radio" name="gender" value="남">남자
+        <input type="radio" name="gender" value="여">여자<br><br>
+        생년월일 <input type="date"><br><br>
+        관심사 <input type="checkbox" name="hobby" value="여행">여행
+        <input type="checkbox" name="hobby" value="패션">패션
+        <input type="checkbox" name="hobby" value="음식">음식<br><br>
+        <button type="button" onclick="signUp()">회원가입</button>
+</body>
+
+</html>

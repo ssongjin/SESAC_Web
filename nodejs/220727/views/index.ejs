@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Axios</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+
+        function sendGet() {
+            axios({
+                method: "GET",
+                url: "http://localhost:8080/receive",
+                params: {
+                    name: "codee"
+                }
+            }).then((a) => { return a.data; })
+                .then((d) => {
+                    alert(d.message);
+                });
+        }
+        function sendPost() {
+            axios({
+                method: "POST",
+                url: "http://localhost:8080/receive",
+                data: {
+                    name: "codee"
+                }
+            }).then((a) => { return a.data; })
+                .then((d) => {
+                    alert(d.message);
+                });
+        }
+        function sendForm() {
+            var form = document.getElementById("form_info");
+            console.log(form);
+
+            var result = form.checkValidity();
+            if (!result) {
+                form.reportValidity();
+
+                return false;
+            }
+            console.log(result);
+
+            console.log(form.name.value);
+            console.log(form.age.value);
+
+            axios({
+                method: "POST",
+                url: "http://localhost:8080/receive",
+                data: {
+                    name: form.name.value
+                }
+            }).then((a) => { return a.data; })
+                .then((d) => {
+                    alert(d.message);
+                });
+        }
+
+    </script>
+</head>
+
+<body>
+    <button type="button" onclick="sendGet()">get버튼</button>
+    <button type="button" onclick="sendPost()">post버튼</button>
+    <form id="form_info">
+        이름 <input type="text" name="name" required>
+        나이 <input type="text" name="age" required>
+        <button type="button" onclick="sendForm()">sendForm</button>
+    </form>
+</body>
+
+</html>
