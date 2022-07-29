@@ -1,1 +1,1 @@
-userId//name//userPw
+userId
