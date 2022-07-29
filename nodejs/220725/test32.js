@@ -8,23 +8,25 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/", function (req, res) {
+app.use("/", function (req, res) {
     res.render("test32");
 })
 
-app.get("/receive", function (req, res) {
+app.use("/receive", function (req, res) {
     console.log(req.query);
-    let name = req.query.name;
-    let msg = req.query.name +"님 회원가입했습니다.";
+    let name = req.body.name;
+    let msg = req.body.name + "님 회원가입했습니다.";
     res.send({ name: name, message: msg });
 })
-
-const fs = require('fs');
-fs.writeFile('./info.txt', 'userId' , 'utf8', function(err){
-    if (err) {
-        console.log(err);
-    }
-});
+app.use("/register", function (req, res) {
+    const data = req.body.userId + "//" + req.query.name + "//" + req.query.userPw;
+    const fs = require('fs');
+    fs.writeFile("info.txt", data, "utf8", function (err) {
+        if (err) {
+            console.log(err);
+        }
+    });
+})
 
 app.listen(port, () => {
     console.log("Server Port : ", port);
