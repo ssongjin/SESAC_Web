@@ -30,9 +30,7 @@ app.get("/", function (req, res) {
 app.post("/register", upload.single('userfile'), function (req, res) {
     res.render("register", { filename: req.file.filename });
 })
-app.get("/register", function (req, res) {
-    res.render("register", { filename: "asdf.jpg" });
-})
+
 app.listen(port, () => {
     console.log("Server Port : ", port);
 })
