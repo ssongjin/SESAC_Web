@@ -14,12 +14,12 @@ app.use("/", function (req, res) {
 
 app.use("/receive", function (req, res) {
     console.log(req.query);
-    let name = req.body.name;
-    let msg = req.body.name + "님 회원가입했습니다.";
+    let name = req.query.name;
+    let msg = req.query.name + "님 회원가입했습니다.";
     res.send({ name: name, message: msg });
 })
 app.use("/register", function (req, res) {
-    const data = req.body.userId + "//" + req.query.name + "//" + req.query.userPw;
+    const data = req.body.userId + "//" + req.body.name + "//" + req.body.userPw;
     const fs = require('fs');
     fs.writeFile("info.txt", data, "utf8", function (err) {
         if (err) {
