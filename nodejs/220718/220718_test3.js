@@ -1,4 +1,4 @@
-function call(name, cb) {
+function call(name) {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
             console.log(name);
@@ -6,7 +6,7 @@ function call(name, cb) {
         }, 1000);
     });
 }
-function back(txt) {
+function back() {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
             console.log("back");
@@ -14,7 +14,7 @@ function back(txt) {
         }, 1000);
     })
 }
-function hell(cb) {
+function hell() {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
             resolve("callback hell");
@@ -24,7 +24,7 @@ function hell(cb) {
 call('kim')
     .then(function (name) {
         console.log(name + "반가워");
-        return back(back);
+        return back();
     })
     .then(function (txt) {
         console.log(txt + "을 실행했구나");
