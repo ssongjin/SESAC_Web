@@ -62,13 +62,13 @@
             document.getElementById("button-group").innerHTML = html;
         }
 
-        function editDo() {
+        function editDo(id) {
             var form = document.getElementById("form_comment");
             axios({
                 method: 'patch',
                 url: 'http://localhost:8000/visitor/edit',
                 data: {
-                    id: form.id.value,
+                    id: id,
                     name: form.name.value,
                     comment: form.comment.value
                 }

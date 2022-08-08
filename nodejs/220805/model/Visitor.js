@@ -32,7 +32,7 @@ exports.get_visitor = (id, cb) => {
 }
 
 exports.update = (data, cb) => {
-    let sql = `UPDATE visitor SET name=${data.name}, comment = ${data.comment} WHERE id = ${data.id}`;
+    let sql = `UPDATE visitor SET name='${data.name}', comment ='${data.comment}' WHERE id = ${data.id}`;
     cnn.query(sql, (err, rows) => {
         if (err) throw err;
         cb(rows);
