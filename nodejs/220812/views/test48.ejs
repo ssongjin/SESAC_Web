@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <css>
+
+    </css>
+    <script>
+        console.log(document.cookie);
+        document.cookie = "user=sesac; expires=Sat, 13 Aug 2022 13:00:00 GMT; path=/";
+        console.log(document.cookie);
+
+        // var cookieArr = document.cookie.split(";");
+        // for (var i in cookieArr) {
+        //     console.log(cookieArr[i]);
+        // }
+        function setCookie(name, value, expiredays) {
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+
+        function close_pop() {
+            if (document.pop_form.chkbox.checked) {
+                setCookie("notice_pop", "done", 1);
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <form name="notice">
+        <div id="notice_pop" style="width:700px; height: 300px;">
+
+            <div id="div_notice1" style="text-align:left; width:700px; height:30px; background-color: silver;">안내</div>
+            <div id="div_notice2" <div id="div_notice3" style="text-align:left;">인터넷익스플로러 서비스 지원이 2022년 6월 15일 종료됨에 따라
+                안전하고 원활한 LH청약센터 이용을 위해 크롬, 사파리, 엣지 등의 웹브라우저를 이용해주시기 바랍니다.</div>
+
+            <input type="checkbox" name="close" id="todayclose">오늘 하루 그만보기
+            <button onclick="close_pop" style="text-align:right; margin : 5 3 3 3;">닫기</button>
+        </div>
+    </form>
+</body>
+
+</html>

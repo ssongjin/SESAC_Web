@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>회원가입</title>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        function signUp() {
+            var form = document.getElementById("form_info");
+            console.log(form);
+
+            var result = form.checkValidity();
+            if (!result) {
+                form.reportValidity();
+
+                return false;
+            }
+            console.log(result);
+
+            console.log(form.userId.value);
+            console.log(form.name.value);
+            console.log(form.userPw.value);
+            console.log(form.comment.value);
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <form id="form_info" action="" enctype="multipart/form-data">
+            아이디* <input type="text" name="userId" placeholder="ID" required><br><br>
+            이름* <input type="text" name="name" placeholder="이름" required><br><br>
+            비밀번호* <input type="password" name="userPw" required>
+            코멘트* <input type="text" name="comment">
+        </form>
+
+        <button type="button" onclick="signUp()">회원가입</button>
+</body>
+
+</html>

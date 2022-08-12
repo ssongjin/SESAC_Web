@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>회원가입</title>
+    <script>
+        function register() {
+            let form = document.getElementById("form_register");
+            axios({
+                method: "post",
+                url: "http://localhost:8080/user/register",
+                data: {
+                    id: form.id.value,
+                    pw: form.pw.bvalue,
+                    name: form.name.value,
+                    age: form.age.value
+                }
+            }).then((response) => {
+                return response.data;
+            }).then((data) => {
+                alert(data);
+                window.lacation.href = "/user/login";
+            })
+        }
+    </script>
+
+</head>
+
+<body>
+    <form id="form_register" method="post">
+        <fieldest style="width: 300px;">
+            <legend>개인정보</legend>
+            아이디 : <input type="text" name="id"><br>
+            비밀번호 : <input type="text" name="pw"><br>
+            이름 : <input type="text" name="name"><br>
+            나이 : <input type="text" name="age"><br><br>
+            <button type="button" onclick="register()" ;>회원가입</button>
+        </fieldest>
+    </form>
+</body>
+
+</html>
