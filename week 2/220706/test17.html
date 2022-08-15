@@ -1,0 +1,205 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../jquery-ui-1.13.1.custom/jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.13.1.custom/jquery-ui-1.13.1.custom/jquery-ui.js">
+    <title>일개미의 7월 스케줄러</title>
+    <style>
+        tr>th:first-child,
+        td:first-child {
+            color: red;
+        }
+
+        tr>th:last-child,
+        td:last-child {
+            color: blue;
+        }
+
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: green;">2022년 7월</h1>
+
+    날짜: <input type="text" id="date" style="width: 300px;"><br>
+    내용: <input type="text" id="schedule" style="width: 300px;"><br><br>
+    <button type="button" onclick="postSchedule();">일정 올리기</button>
+
+    <table align="center" width="500" height="600">
+        <tr>
+            <th>일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+        </tr>
+        <tr>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p>1</p>
+            </td>
+            <td>
+                <p>2</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>3</p>
+            </td>
+            <td>
+                <p>4</p>
+            </td>
+            <td>
+                <p>5</p>
+            </td>
+            <td>
+                <p>6</p>
+            </td>
+            <td>
+                <p>7</p>
+            </td>
+            <td>
+                <p>8</p>
+            </td>
+            <td>
+                <p>9</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>10</p>
+            </td>
+            <td>
+                <p>11</p>
+            </td>
+            <td>
+                <p>12</p>
+            </td>
+            <td>
+                <p>13</p>
+            </td>
+            <td>
+                <p>14</p>
+            </td>
+            <td>
+                <p>15</p>
+            </td>
+            <td>
+                <p>16</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>17</p>
+            </td>
+            <td>
+                <p>18</p>
+            </td>
+            <td>
+                <p>19</p>
+            </td>
+            <td>
+                <p>20</p>
+            </td>
+            <td>
+                <p>21</p>
+            </td>
+            <td>
+                <p>22</p>
+            </td>
+            <td>
+                <p>23</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>24</p>
+            </td>
+            <td>
+                <p>25</p>
+            </td>
+            <td>
+                <p>26</p>
+            </td>
+            <td>
+                <p>27</p>
+            </td>
+            <td>
+                <p>28</p>
+            </td>
+            <td>
+                <p>29</p>
+            </td>
+            <td>
+                <p>30</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>31</p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+        </tr>
+
+        <script>
+            var target;
+            $("td").on("click", function (obj) {
+                console.log(obj);
+                target = obj.cureenttarget;
+                console.log(target);
+                $("#date").val($(obj.cureenttarget).text());
+            })
+            function postSchedule() {
+                var schedule = $("schedule").val();
+                var posting = document.querySelectorAll("p")
+                for (var i = 0; i < posting.length; i++) {
+                    console.log(posting[i]);
+                    if ($(posting[i]).text() == $("#date").val()) {
+                        $(posting[i]).after()
+                    }
+                }
+            }
+        </script>
+
+
+</body>
+
+</html>

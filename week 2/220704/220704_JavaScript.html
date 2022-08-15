@@ -1,0 +1,67 @@
+<html>
+
+    <script>
+
+        var cat = {
+            name: "나비",
+            age: 1,
+            mew: function () {
+                return "야옹"
+            }
+        };
+        console.log(cat);
+        console.log(cat.name);
+        console.log(cat.mew());
+
+        var arr1 = [1, 2, 3, "안녕", "반가워"];
+        console.log(arr1.length);
+        arr1.push("push는 해당 배열에 데이터를 추가하는 것");
+        console.log(arr1);
+        arr1.pop();
+        console.log(arr1);
+        /* pop은 마지막 항목 하나를 빼는 것 */
+        /* unshift도 추가하는 것인데, push는 가장 마지막에 추가되고, unshift는 맨 처음에 추가된다 */
+        /* shift도 빼는 것인데, 맨 처음 데이터를 뺀다 */
+
+        console.log(arr1.indexOf("안녕"));
+
+        var me = {
+            name: 'jinsoo',
+            birth: '0315',
+        };
+        me['gender'] = 'F'
+        console.log([me]);
+
+        /*기본자료형: 다른 변수에 */
+        var a = 1;
+        var b = a;
+        console.log("a:", a);
+        console.log("b:", b);
+        a = 10;
+        console.log("a:", a);
+        console.log("b:", b);
+
+        /*객체자료형*/
+        var a1 = [1, 2, 3, 4, 5];
+        var a2 = a1;
+        console.log("a1 : ", a1);
+        console.log("a2 : ", a2);
+        a1.pop();
+        console.log("a1 : ", a1);
+        console.log("a2 : ", a2);
+
+        /*변수 확인하는 법 typeof('문자' / 245 / function()) */
+
+        /* 행 변환 - 문자열로 
+        string(true);
+        a.toString();
+        (false).toString(); */
+
+        /* 행 변환 - 정수로
+        Number(true)
+        Number('10')
+        paraseINT('10'); */
+
+    </script>
+
+</html>

@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>방명록</title>
+    <style>
+        table {
+            width: 500px;
+            height: 100px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function writeNote() {
+            var name = document.getElementById("name").value;
+            var message = document.getElementById("message").value;
+            var table = document.getElementById("table");
+            var garo = document.createElement("tr");
+            var kan1 = document.createElement("td");
+        }
+    </script>
+
+</head>
+
+<body>
+    <p>방명록입니다.</p>
+    작성자 <input type="text" id="name"><br>
+    내용 <input type="text" id="message"><br><br>
+    <button type="button" onclick="writeNote();">작성</button><br><br>
+    <table border="1" cellspacing="1" cellpadding="1">
+        <tr>
+            <th>번호</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+        </tr>
+
+
+
+</body>
+
+</html>

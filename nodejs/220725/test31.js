@@ -9,15 +9,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get("/", function (req, res) {
-    res.render("test30");
+    res.render("test31");
 })
-app.get("/user_info", function (req, res) {
-    var userId = req.query.userId;
-    var name = req.query.name;
-    var userPw = req.query.userPw;
-    var comment = req.query.comment;
-    res.send(`아이디 : ${userId}, 이름 : ${name}, 비밀번호 : ${userPw}, 코멘트 : ${comment}`);
+app.post("/user_info", function (req, res) {
+    var name = req.body.name;
+    var gender = req.body.gender;
+    var birthday = req.body.birthday;
+    var color = req.body.color;
+
+    res.send('')
 })
+
+
+
 
 app.listen(port, () => {
     console.log("Server Port : ", port);

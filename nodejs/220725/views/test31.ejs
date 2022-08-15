@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>회원정보</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>회원정보</legend>
+        <form action="/user_info" enctype="multipart/form-data" method="POST">
+            이름* <input type="text" name="name" placeholder="이름" required><br>
+            성별* <input type="radio" name="gender" value="남" required>남자
+            <input type="radio" name="gender" value="여">여자
+            <input type="radio" name="gender" value="그 외">그 외<br>
+            생년월일 <input type="birthday" name="birthday"><br>
+            좋아하는 색깔은? <input type="color" name="color"><br>
+    </fieldest>
+    <button>회원정보 등록</button>
+        </form>
+        
+</body>
+
+</html>

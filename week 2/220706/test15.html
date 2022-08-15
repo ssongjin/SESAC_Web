@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../jquery-ui-1.13.1.custom/jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.13.1.custom/jquery-ui-1.13.1.custom/jquery-ui.js">
+    <script>
+        function apple() {
+            $("img").attr("src", "http://img.danawa.com/prod_img/500000/768/555/img/9555768_1.jpg?shrink=330:330&_v=20190924162343");
+        }
+        function banana() {
+            $("img").attr("src", "https://cdn.mindgil.com/news/photo/202005/69245_3203_1851.jpg");
+        }
+        function grape() {
+            $("img").attr("src", "https://www.yyg.go.kr/contents/71/img_grape01_2.jpg?build_20220630005?width=471&height=1&quality=50");
+        }
+        function peach() {
+            $("img").attr("src", "https://obj-sg.thewiki.kr/data/ebb3b5ec88adec95842e6a7067.jpg");
+        }
+    </script>
+
+</head>
+
+<body>
+    <img width="500px" height="500px"><br>
+    <button type="button" onclick="apple()">사과</button>
+    <button type="button" onclick="banana()">바나나</button>
+    <button type="button" onclick="grape()">포도</button>
+    <button type="button" onclick="peach()">복숭아</button>
+
+</body>
+
+</html>

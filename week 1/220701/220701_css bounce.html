@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #square {
+            width: 100px;
+            height: 100px;
+            margin-left: 200px;
+            background: orange;
+            position: absolute;
+            animation-name: bounce;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes bounce {
+            from,to {
+                bottom: 0px;
+                animation-timing-function: ease-out;
+            }
+
+            50% {
+                bottom: 300px;
+                animation-timing-function: ease-in;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="square"></div>
+</body>
+
+</html>
